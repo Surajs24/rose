@@ -58,7 +58,7 @@ header nav ul li a {
 }
 
 .hero {
-    background: var(--blue);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-background.jpeg') no-repeat center center/cover;
     color: var(--white);
     height: 60vh;
     display: flex;
@@ -103,8 +103,21 @@ header nav ul li a {
 .work-item {
     flex: 1;
     background: var(--white);
-    padding: 20px;
+    padding: 0;
+    padding-bottom: 20px;
     border-radius: 5px;
+    text-align: center;
+}
+
+.work-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+}
+
+.work-item h3, .work-item p {
+    padding: 0 15px;
 }
 
 .donation-details {
