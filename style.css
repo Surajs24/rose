@@ -58,7 +58,7 @@ header nav ul li a {
 }
 
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-background.jpeg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-background.jpeg') no-repeat center center/cover;
     color: var(--white);
     height: 60vh;
     display: flex;
@@ -107,6 +107,7 @@ header nav ul li a {
     padding-bottom: 20px;
     border-radius: 5px;
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Added a subtle shadow for better appearance */
 }
 
 .work-item img {
