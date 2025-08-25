@@ -121,24 +121,44 @@ header nav ul li a {
     padding: 0 15px;
 }
 
-/* Gallery Styles */
+/* === NEW GALLERY STYLES === */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    /* This creates a responsive grid that shows as many columns as can fit */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px; /* The space between the gallery cards */
+}
+
+.gallery-item {
+    background: var(--white);
+    border-radius: 8px; /* Rounded corners for the card look */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* A slightly deeper shadow */
+    overflow: hidden; /* Ensures the image respects the rounded corners */
+    display: flex;
+    flex-direction: column; /* Stacks the image on top of the title */
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px); /* Lifts the card up slightly on hover */
 }
 
 .gallery-item img {
     width: 100%;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    height: 220px; /* This creates the uniform height */
+    object-fit: cover; /* This scales and crops the image to fill the space without stretching */
+    display: block;
 }
 
-.gallery-item img:hover {
-    transform: scale(1.05);
+.gallery-title {
+    padding: 15px;
+    text-align: center;
+    font-weight: 600; /* Bolder font for the title */
+    color: var(--dark-text);
+    background: var(--light-gray);
+    border-top: 1px solid #e0e0e0; /* A subtle line separating image and title */
 }
+/* === END NEW GALLERY STYLES === */
 
 .donation-details {
     background: var(--light-gray);
@@ -171,6 +191,10 @@ footer a {
 
 /* Responsive Design */
 @media(max-width: 768px) {
+    .container {
+        width: 90%; /* More space on smaller screens */
+    }
+    
     header .container {
         flex-direction: column;
     }
@@ -185,5 +209,10 @@ footer a {
 
     .work-items {
         flex-direction: column;
+    }
+
+    .gallery-grid {
+        /* On mobile, ensure it fits well */
+        grid-template-columns: 1fr;
     }
 }
